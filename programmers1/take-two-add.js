@@ -1,13 +1,25 @@
-function solution(numbers){
-    let sum = 0;
-    let result = [];
-    for(let i = 0; i < numbers.length; i++){
-        for(let j = i + 1; j < numbers.length; j++){
-            sum = numbers[i] + numbers[j]
-            if(result.indexOf(sum) === -1){
-                result.push(sum)
-            }
-        }
+/*
+두 개 뽑아서 더하기
+
+numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 
+배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요.
+
+numbers	result
+[2,1,3,4,1]	[2,3,4,5,6,7]
+[5,0,2,7]	[2,5,7,9,12]
+*/
+
+function solution(numbers) {
+  let sum = 0;
+  let result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      sum = numbers[i] + numbers[j];
+      if (result.indexOf(sum) === -1) {
+        //result에 sum이 존재하지 않으면
+        result.push(sum);
+      }
     }
-    return result.sort((a, b) => a - b)
+  }
+  return result.sort((a, b) => a - b);
 }

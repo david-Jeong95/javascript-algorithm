@@ -1,16 +1,21 @@
+/*
+소수 찾기
+
+1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환
+*/
 //에라토스테네스 방법
 function solution(n) {
-    let arr = Array.from({ length: n + 1 }, () => true); // 0~10
-    arr.splice(0, 2, false, false); // 0, 1은 false(소수가 아니므로)
-    for(let i = 2; i < n + 1; i++){
-        if(arr[i]){
-            for(let j = i * i; j < n + 1; j += i){
-                arr[j] = false
-            }
-        }
+  let arr = Array.from({ length: n + 1 }, () => true); // 0~10 인덱스에 true 값 대입 => [0: true, 1: true...]
+  arr.splice(0, 2, false, false); // 0, 1은 false(소수가 아니므로)
+  for (let i = 2; i < n + 1; i++) {
+    if (arr[i]) {
+      for (let j = i * i; j < n + 1; j += i) {
+        arr[j] = false;
+      }
     }
-    let answer = arr.filter((el) => el === true);
-    return answer.length;
+  }
+  let answer = arr.filter((el) => el === true);
+  return answer.length;
 }
 
 // function solution(n) {
