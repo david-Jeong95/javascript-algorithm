@@ -2,9 +2,9 @@
 시저 암호
 
 s	        n	        result
-"AB"	    1	        "BC"
+"AB"	     1	        "BC"
 "z"	        1	        "a"
-"a B z"	    4	        "e F d"
+"a B z"	      4	        "e F d"
 
 z"는 1만큼 밀면 "a"가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.
 */
